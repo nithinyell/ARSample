@@ -13,8 +13,11 @@
 		592E8373249DF39000A10DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E8371249DF39000A10DD3 /* Main.storyboard */; };
 		592E8375249DF39100A10DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592E8374249DF39100A10DD3 /* Assets.xcassets */; };
 		592E8378249DF39100A10DD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E8376249DF39100A10DD3 /* LaunchScreen.storyboard */; };
-		592E8380249DF70900A10DD3 /* Chair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 592E837F249DF70900A10DD3 /* Chair.dae */; };
+		592E8380249DF70900A10DD3 /* RedChair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 592E837F249DF70900A10DD3 /* RedChair.dae */; };
 		594A6919249E2C78003CAFDD /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594A6918249E2C78003CAFDD /* ARViewController.swift */; };
+		594A691C249E34BB003CAFDD /* TableChair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691B249E34BB003CAFDD /* TableChair.dae */; };
+		594A691E249E3555003CAFDD /* SideLamp.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691D249E3555003CAFDD /* SideLamp.dae */; };
+		594A6920249E374A003CAFDD /* QueenChair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691F249E374A003CAFDD /* QueenChair.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +29,11 @@
 		592E8374249DF39100A10DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592E8377249DF39100A10DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		592E8379249DF39100A10DD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		592E837F249DF70900A10DD3 /* Chair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Chair.dae; sourceTree = "<group>"; };
+		592E837F249DF70900A10DD3 /* RedChair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = RedChair.dae; sourceTree = "<group>"; };
 		594A6918249E2C78003CAFDD /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		594A691B249E34BB003CAFDD /* TableChair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = TableChair.dae; sourceTree = "<group>"; };
+		594A691D249E3555003CAFDD /* SideLamp.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = SideLamp.dae; sourceTree = "<group>"; };
+		594A691F249E374A003CAFDD /* QueenChair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = QueenChair.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,9 @@
 		592E836A249DF39000A10DD3 /* ARSample2 */ = {
 			isa = PBXGroup;
 			children = (
+				594A691A249E348A003CAFDD /* DAE */,
 				592E836B249DF39000A10DD3 /* AppDelegate.swift */,
 				592E836D249DF39000A10DD3 /* SceneDelegate.swift */,
-				592E837F249DF70900A10DD3 /* Chair.dae */,
 				592E836F249DF39000A10DD3 /* ViewController.swift */,
 				594A6918249E2C78003CAFDD /* ARViewController.swift */,
 				592E8371249DF39000A10DD3 /* Main.storyboard */,
@@ -71,6 +77,17 @@
 				592E8379249DF39100A10DD3 /* Info.plist */,
 			);
 			path = ARSample2;
+			sourceTree = "<group>";
+		};
+		594A691A249E348A003CAFDD /* DAE */ = {
+			isa = PBXGroup;
+			children = (
+				592E837F249DF70900A10DD3 /* RedChair.dae */,
+				594A691B249E34BB003CAFDD /* TableChair.dae */,
+				594A691D249E3555003CAFDD /* SideLamp.dae */,
+				594A691F249E374A003CAFDD /* QueenChair.dae */,
+			);
+			path = DAE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +150,10 @@
 			files = (
 				592E8378249DF39100A10DD3 /* LaunchScreen.storyboard in Resources */,
 				592E8375249DF39100A10DD3 /* Assets.xcassets in Resources */,
-				592E8380249DF70900A10DD3 /* Chair.dae in Resources */,
+				592E8380249DF70900A10DD3 /* RedChair.dae in Resources */,
+				594A6920249E374A003CAFDD /* QueenChair.dae in Resources */,
+				594A691E249E3555003CAFDD /* SideLamp.dae in Resources */,
+				594A691C249E34BB003CAFDD /* TableChair.dae in Resources */,
 				592E8373249DF39000A10DD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

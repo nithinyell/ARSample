@@ -9,11 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    fileprivate var arOptions = ["Chair", "Sofa", "Table"]
     
     @IBOutlet var tableView: UITableView!
     
+    fileprivate var arOptions = ["RedChair", "TableChair", "QueenChair", "SideLamp"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
