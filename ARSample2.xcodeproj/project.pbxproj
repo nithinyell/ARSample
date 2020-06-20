@@ -13,6 +13,7 @@
 		592E8373249DF39000A10DD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E8371249DF39000A10DD3 /* Main.storyboard */; };
 		592E8375249DF39100A10DD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592E8374249DF39100A10DD3 /* Assets.xcassets */; };
 		592E8378249DF39100A10DD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E8376249DF39100A10DD3 /* LaunchScreen.storyboard */; };
+		592E8380249DF70900A10DD3 /* chair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 592E837F249DF70900A10DD3 /* chair.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		592E8374249DF39100A10DD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592E8377249DF39100A10DD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		592E8379249DF39100A10DD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		592E837F249DF70900A10DD3 /* chair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = chair.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				592E836B249DF39000A10DD3 /* AppDelegate.swift */,
 				592E836D249DF39000A10DD3 /* SceneDelegate.swift */,
+				592E837F249DF70900A10DD3 /* chair.dae */,
 				592E836F249DF39000A10DD3 /* ViewController.swift */,
 				592E8371249DF39000A10DD3 /* Main.storyboard */,
 				592E8374249DF39100A10DD3 /* Assets.xcassets */,
@@ -127,6 +130,7 @@
 			files = (
 				592E8378249DF39100A10DD3 /* LaunchScreen.storyboard in Resources */,
 				592E8375249DF39100A10DD3 /* Assets.xcassets in Resources */,
+				592E8380249DF70900A10DD3 /* chair.dae in Resources */,
 				592E8373249DF39000A10DD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,12 +289,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4QVVLY2P7;
 				INFOPLIST_FILE = ARSample2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TechGeek.ARSample2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TechGeek.ARSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,12 +307,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K4QVVLY2P7;
 				INFOPLIST_FILE = ARSample2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TechGeek.ARSample2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TechGeek.ARSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
