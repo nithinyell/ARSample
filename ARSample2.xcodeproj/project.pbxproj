@@ -18,6 +18,7 @@
 		594A691C249E34BB003CAFDD /* TableChair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691B249E34BB003CAFDD /* TableChair.dae */; };
 		594A691E249E3555003CAFDD /* SideLamp.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691D249E3555003CAFDD /* SideLamp.dae */; };
 		594A6920249E374A003CAFDD /* QueenChair.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A691F249E374A003CAFDD /* QueenChair.dae */; };
+		594A6928249E60C9003CAFDD /* WoodenTable.dae in Resources */ = {isa = PBXBuildFile; fileRef = 594A6927249E60C9003CAFDD /* WoodenTable.dae */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		594A691B249E34BB003CAFDD /* TableChair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = TableChair.dae; sourceTree = "<group>"; };
 		594A691D249E3555003CAFDD /* SideLamp.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = SideLamp.dae; sourceTree = "<group>"; };
 		594A691F249E374A003CAFDD /* QueenChair.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = QueenChair.dae; sourceTree = "<group>"; };
+		594A6927249E60C9003CAFDD /* WoodenTable.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = WoodenTable.dae; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				594A691B249E34BB003CAFDD /* TableChair.dae */,
 				594A691D249E3555003CAFDD /* SideLamp.dae */,
 				594A691F249E374A003CAFDD /* QueenChair.dae */,
+				594A6927249E60C9003CAFDD /* WoodenTable.dae */,
 			);
 			path = DAE;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				594A6928249E60C9003CAFDD /* WoodenTable.dae in Resources */,
 				592E8378249DF39100A10DD3 /* LaunchScreen.storyboard in Resources */,
 				592E8375249DF39100A10DD3 /* Assets.xcassets in Resources */,
 				592E8380249DF70900A10DD3 /* RedChair.dae in Resources */,

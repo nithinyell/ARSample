@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    fileprivate var arOptions = ["RedChair", "TableChair", "QueenChair", "SideLamp"]
+    fileprivate lazy var arOptions = ["Red Chair", "Table Chair", "Wooden Table", "Side Lamp"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let arViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ARViewController") as? ARViewController {
             
-            arViewController.arObject = arOptions[indexPath.row]
+            arViewController.arObject = arOptions[indexPath.row].replacingOccurrences(of: " ", with: "")
             navigationController?.pushViewController(arViewController, animated: true)
         }
     }
