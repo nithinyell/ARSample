@@ -29,6 +29,20 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" red="0.86274509799999999" green="0.41176470590000003" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxk-nF-9a8">
+                                <rect key="frame" x="20" y="64" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="Sda-B7-dTR"/>
+                                    <constraint firstAttribute="height" constant="35" id="ief-uw-xV5"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Back">
+                                    <color key="titleColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ebe-sF-emU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -36,10 +50,12 @@
                             <constraint firstItem="Tww-by-TZB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BHe-sx-Xnh"/>
                             <constraint firstItem="ejv-KD-DQs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YR5-Ku-rtg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ejv-KD-DQs" secondAttribute="trailing" id="f45-Km-zqj"/>
+                            <constraint firstItem="oxk-nF-9a8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ndC-pb-wun"/>
                             <constraint firstItem="ejv-KD-DQs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q9Y-C4-JJa"/>
                             <constraint firstItem="0Ei-hi-5Jn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rOH-gi-BOA"/>
                             <constraint firstItem="Tww-by-TZB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vtc-wv-CLx"/>
                             <constraint firstItem="0Ei-hi-5Jn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yVn-np-A0z"/>
+                            <constraint firstItem="oxk-nF-9a8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="zQX-nN-kYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -119,4 +135,7 @@
             <point key="canvasLocation" x="392.75362318840581" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Back" width="256" height="256"/>
+    </resources>
 </document>

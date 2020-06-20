@@ -41,7 +41,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let arViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ARViewController") as? ARViewController {
             
             arViewController.arObject = arOptions[indexPath.row].replacingOccurrences(of: " ", with: "")
-            navigationController?.pushViewController(arViewController, animated: true)
+            self.present(arViewController, animated: true, completion: nil)
         }
     }
 }

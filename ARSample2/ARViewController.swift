@@ -43,7 +43,7 @@ class ARViewController: UIViewController {
       override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
         
-          ARConfig()
+        ARConfig()
       }
       
       override func viewWillDisappear(_ animated: Bool) {
@@ -52,6 +52,14 @@ class ARViewController: UIViewController {
           sceneView.session.pause()
       }
       
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
+    @IBAction func onPressBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     private func ARConfig() {
         
         let config = ARWorldTrackingConfiguration()
