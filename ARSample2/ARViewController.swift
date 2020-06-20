@@ -18,6 +18,10 @@ class ARViewController: UIViewController {
     
     // MARK: Properties
     var arObject: String?
+    private var isARObjectedActive = false
+    private var newAngleY: Float = 0.0
+    private var currentAngleY: Float = 0.0
+    private var localtranslatePosition: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +37,7 @@ class ARViewController: UIViewController {
             self?.statusLabel.layer.masksToBounds = true
         }
         
-        //addARObject()
+        registerGestureRecognizers()
     }
       
       override func viewWillAppear(_ animated: Bool) {
@@ -56,25 +60,68 @@ class ARViewController: UIViewController {
         sceneView.session.run(config)
     }
 
-      func configureLighting() {
-//          sceneView.autoenablesDefaultLighting = true
-//          sceneView.automaticallyUpdatesLighting = true
-      }
-      
-      func addARObject() {
+    private func registerGestureRecognizers() {
         
-        guard let arObject = self.arObject, let chairScene = SCNScene(named: arObject + ".dae") else { return }
-             let chairNode = SCNNode()
-             let chairSceneChildNodes = chairScene.rootNode.childNodes
-                 
-             for childNode in chairSceneChildNodes {
-                 chairNode.addChildNode(childNode)
-             }
-                 
-          chairNode.position = SCNVector3(0, 0, -0.5)
-          chairNode.scale = SCNVector3(0.5, 0.5, 0.5)
-          sceneView.scene.rootNode.addChildNode(chairNode)
-      }
+        let tapgestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addARObject))
+        self.sceneView.addGestureRecognizer(tapgestureRecognizer)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned))
+        self.sceneView.addGestureRecognizer(panGestureRecognizer)
+
+    }
+     
+    @objc func addARObject(recognizer: UITapGestureRecognizer) {
+        
+        if isARObjectedActive {
+            return
+        }
+        
+        guard let sceneView = recognizer.view as? ARSCNView else{
+            return
+        }
+        
+        let touch = recognizer.location(in: sceneView)
+        
+        let hitTestResults = sceneView.hitTest(touch, types: .existingPlane)
+        
+        if let hitTest = hitTestResults.first {
+            
+            guard let arObject = self.arObject, let chairScene = SCNScene(named: arObject + ".dae") else { return }
+            let chairNode = SCNNode()
+            let chairSceneChildNodes = chairScene.rootNode.childNodes
+            
+            for childNode in chairSceneChildNodes {
+                chairNode.addChildNode(childNode)
+            }
+            
+            chairNode.position = SCNVector3(hitTest.worldTransform.columns.3.x , hitTest.worldTransform.columns.3.y , hitTest.worldTransform.columns.3.z)
+            
+            sceneView.scene.rootNode.addChildNode(chairNode)
+            isARObjectedActive = true
+            statusLabel.isHidden = true
+        }
+    }
+    
+    @objc func panned(recognizer: UIPanGestureRecognizer){
+        
+        if recognizer.state == .changed {
+            guard let sceneview = recognizer.view as? ARSCNView else {
+                return
+            }
+            let touch = recognizer.location(in: sceneView)
+            let translation = recognizer.translation(in: sceneview)
+            
+            let hitTestResults = self.sceneView.hitTest(touch, options: nil)
+            if let hitTest = hitTestResults.first {
+                if let parentNode = hitTest.node.parent {
+                    
+                    self.newAngleY = Float(translation.x) * (Float)(Double.pi)/180
+                    self.newAngleY += self.currentAngleY
+                    parentNode.eulerAngles.y = self.newAngleY
+                }
+            }
+        }
+    }
 }
 
 extension ARViewController: ARSCNViewDelegate {
