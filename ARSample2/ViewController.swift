@@ -7,52 +7,36 @@
 //
 
 import UIKit
-import ARKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var sceneView: ARSCNView!
+    fileprivate var arOptions = ["Chair", "Sofa", "Table"]
+    
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureLighting()
-        addChair()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        ARConfig()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        sceneView.session.pause()
-    }
-    
-    private func ARConfig() {
-        let config = ARWorldTrackingConfiguration()
-        sceneView.session.run(config)
-    }
-
-    func configureLighting() {
-        sceneView.autoenablesDefaultLighting = true
-        sceneView.automaticallyUpdatesLighting = true
-    }
-    
-    func addChair() {
-        guard let chairScene = SCNScene(named: "chair.dae") else { return }
-           let chairNode = SCNNode()
-           let chairSceneChildNodes = chairScene.rootNode.childNodes
-               
-           for childNode in chairSceneChildNodes {
-               chairNode.addChildNode(childNode)
-           }
-               
-        chairNode.position = SCNVector3(0, 0, -0.5)
-        chairNode.scale = SCNVector3(0.5, 0.5, 0.5)
-        sceneView.scene.rootNode.addChildNode(chairNode)
     }
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arOptions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = arOptions[indexPath.row]
+        
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(arOptions[indexPath.row])
+    }
+}
