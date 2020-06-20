@@ -9,12 +9,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    fileprivate lazy var arOptions = ["Red Chair", "Table Chair", "Wooden Table", "Side Lamp"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arOptions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = arOptions[indexPath.row]
+        
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let arViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ARViewController") as? ARViewController {
+            
+            arViewController.arObject = arOptions[indexPath.row].replacingOccurrences(of: " ", with: "")
+            self.present(arViewController, animated: true, completion: nil)
+        }
+    }
+}
