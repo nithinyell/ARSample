@@ -11,17 +11,21 @@ import ARKit
 
 class ARViewController: UIViewController {
 
-      @IBOutlet weak var sceneView: ARSCNView!
-      
+    @IBOutlet weak var sceneView: ARSCNView!
+    
+    var arObject: String?
+    
       override func viewDidLoad() {
           super.viewDidLoad()
           
           configureLighting()
-          addChair()
+          addARObject()
       }
       
       override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
+        
+        
           ARConfig()
       }
       
@@ -41,8 +45,9 @@ class ARViewController: UIViewController {
           sceneView.automaticallyUpdatesLighting = true
       }
       
-      func addChair() {
-          guard let chairScene = SCNScene(named: "chair.dae") else { return }
+      func addARObject() {
+        
+        guard let arObject = self.arObject, let chairScene = SCNScene(named: arObject + ".dae") else { return }
              let chairNode = SCNNode()
              let chairSceneChildNodes = chairScene.rootNode.childNodes
                  

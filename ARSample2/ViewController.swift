@@ -37,6 +37,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(arOptions[indexPath.row])
+        
+        if let arViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ARViewController") as? ARViewController {
+            
+            arViewController.arObject = arOptions[indexPath.row]
+            navigationController?.pushViewController(arViewController, animated: true)
+        }
     }
 }
